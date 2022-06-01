@@ -1,0 +1,37 @@
+doctype html
+head
+  link(rel='stylesheet' href='./static/stylesheets/bmi.css')
+  link(href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title BMI checker
+.header
+  .wrapper
+    form(action='/' method='POST')
+      h1 BMI calculator
+      p Insert Your Age
+      if age
+        input#age(type='text' name='age' value=age)
+      else 
+        input#age(type='text' name='age')
+      p Insert Weight in Kg
+      if weight
+        input#weight(type='text' name='weight' value=weight)
+      else 
+        input#weight(type='text' name='weight')
+      br
+      p Insert Height in cm
+      if height
+        input#height(type='text' name='height' value=height)
+      else 
+        input#height(type='text' name='height')
+      br
+      button#calc check
+      if bmi
+        p#result
+          b Your BMI Result is #{bmi}
+      else 
+        p#result
+
+script(src='bmi.js')
